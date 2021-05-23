@@ -6,6 +6,7 @@ public interface ICrudOperation {
     void addContact(Person person);
     void deleteContact(int list_no);
     void show();
+    void editContact(int list_no,int column_no,String edited_details);
 }
 
 
