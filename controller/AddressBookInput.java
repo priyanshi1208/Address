@@ -6,7 +6,8 @@ public class AddressBookInput {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         CrudOperationAddress address=new CrudOperationAddress();
-        int x=0;
+        int x=1;
+        do {
             System.out.println("Press A to add new Data,  Press E to edit Data,  Press D to Delete Data");
             char options = scanner.next().charAt(0);
             switch (options) {
@@ -29,8 +30,8 @@ public class AddressBookInput {
                     String phone_number = scanner.next();
                     address.addContact(new Person(first_name, last_name, city, state, email, zip, phone_number));
                     address.show();
-//                    System.out.println("Press 1 to continue , Press 0 to exit");
-//                    x=scanner.nextInt();
+                    System.out.println("Press 1 to continue , Press 0 to exit");
+                    x=scanner.nextInt();
                     break;
                 }
 
@@ -38,8 +39,8 @@ public class AddressBookInput {
                     System.out.println("Enter the Row you want to delete");
                     int list_no=scanner.nextInt();
                     address.deleteContact(list_no);
-//                    System.out.println("Press 1 to continue , Press 0 to exit");
-//                    x=scanner.nextInt();
+                    System.out.println("Press 1 to continue , Press 0 to exit");
+                    x=scanner.nextInt();
                     break;
                 }
                 case 'E': {
@@ -51,12 +52,12 @@ public class AddressBookInput {
                     System.out.println("Enter the new detail");
                     String edited_Detail= scanner.next();
                     address.editContact(list_No,column_N0,edited_Detail);
-//                    System.out.println("Press 1 to continue , Press 0 to exit");
-//                    x=scanner.nextInt();
+                    System.out.println("Press 1 to continue , Press 0 to exit");
+                    x=scanner.nextInt();
                     break;
                 }
             }
-
+        }while(x!=0);
     }
 
 }
